@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="test">
+    <title>Form</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <section class="wrap" >
+        <header class="header">
+            <h4>Create Account</h4>
+        </header>
+        <form class="grid-container">
+            <div class="grid-item text-field">  <!-- First name -->
+                <label for="first-name">First name*</label><br>
+                <input type="text" id="first-name" name="first-name" placeholder="enter your first name" required>
+            </div>
+            <div class="grid-item text-field">  <!-- Last name -->
+                <label for="last-name">Last name</label><br>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+            </div>
+            <div class="grid-item text-field email-container">  <!--Email -->
+                <label for="email">Email*</label><br>
+                <input type="text" id="email" name="email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="grid-item text-field">  <!-- password -->
+                <label for="password">Password*</label><br>
+                <input type="text" id="password" name="password" placeholder="enter your password" required>
+            </div>
+            <div class="grid-item text-field">  <!-- confirm passwrd -->
+                <label for="confirm-password">Confirm password*</label><br>
+                <input type="text" id="confirm-password" name="confirm-password" placeholder="enter your password again" required>
+            </div>
+            <div class="grid-item checkbox-container">  <!-- Checkbox Gender -->
+                <label for="gender">Gender</label><br>
+                <input class="checkbox-input" type="checkbox" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input class="checkbox-input" type="checkbox" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div class="grid-item checkbox-container">  <!-- Checkbox Favorites -->
+                <label for="interests">Interests</label><br>
+                <input class="checkbox-input" type="checkbox" id="interest1" name="interests" value="interest1">
+                <label for="interest1">Music</label>
+                <input class="checkbox-input" type="checkbox" id="interest2" name="interests" value="interest2">
+                <label for="interest2">Sport</label>
+                <input class="checkbox-input" type="checkbox" id="interest3" name="interests" value="interest3">
+                <label for="interest3">Travel</label>
+                <input class="checkbox-input" type="checkbox" id="interest4" name="interests" value="interest4">
+                <label for="interest4">Movies</label>
+            </div>
+            <div class="grid-item text-field spoiler"> <!-- Spoiler -->
+                <label for="SourceOfIncome">Source of income</label><br>
+                <div class="input-container">
+                    <input type="text" id="SourceOfIncome" value="Employed">
+                    <div class="arrow-container">
+                        <span class="arrow up"></span>
+                        <span class="arrow down"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item slider-container">  <!-- Slider (income) -->
+                <label for="myRange">Income</label><br>
+                <input class="slider" id="myRange" type="range" min="10" max="100" value="20" step="1">
+                <div class="slider-value-layout">
+                    <span id="demo"></span><p>K</p>
+                </div>
+            </div>
+            <fieldset class="grid-item">  <!-- UPload files -->
+                <label for="file">Upload profile picture</label><br>
+                <input type="file" id="file" multiple="multiple">
+            </fieldset>
+            <div class="grid-item text-field">  <!-- Age -->
+                <label for="age">Age</label><br>
+                <input type="text" id="age" name="age" placeholder="18">
+            </div>
+            <div class="grid-item text-field bio-container">  <!-- Bio -->
+                <label for="Bio">Bio</label><br>
+                <textarea id="Bio" placeholder="About me"></textarea>
+            </div>
+        </form>
+        <footer class="footer">
+            <button class="button">Create</button>
+        </footer>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
