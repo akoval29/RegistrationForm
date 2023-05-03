@@ -1,181 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("normalize.css");
 @import url("spoiler/spoiler.css");
 $check-box-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 $fz: 18px;
-$theme-color:rgb(68, 66, 214);  // <=  Theme change feature !
+$theme-color: rgb(68, 66, 214); // <=  Theme change feature !
 
-body {
+.main {
   display: flex;
-  background: linear-gradient(to bottom left,(lighten($theme-color, 20%)), white) no-repeat;
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(
+      to bottom left,
+      (lighten($theme-color, 20%)),
+      white
+    )
+    no-repeat;
+  font-family: "Poppins", sans-serif;
   margin: 30px;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  .wrap {
-    position:relative;
-    display: grid;
-    grid-template-rows: 100px 1fr 80px;
+  user-select: none; // user cannot select text
+}
+
+.wrap {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr 80px;
+  background-color: lighten($theme-color, 44%);
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 30px;
+  box-shadow: 0 0 15px $theme-color;
+}
+
+.header,
+.footer {
+  display: flex;
+  font-weight: bold;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  background-color: $theme-color;
+}
+.header {
+  font-size: calc($fz + 70%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+}
+.footer {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+  justify-content: right;
+  &__button {
     background-color: lighten($theme-color, 44%);
     border-radius: 15px;
-    max-width: 800px;
-    margin: 30px;
-    box-shadow: 0 0 15px $theme-color;
-    .header,
-    .footer {
-      display: flex;
-      font-weight: bold;
-      border: 1px solid black;
-      justify-content: center;
-      align-items: center;
-      background-color: $theme-color;
-      user-select: none;  // user cannot select text
+    font-size: $fz;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    &:hover {
+      background-color: darken($theme-color, 30%);
+      color: white;
+      transform: scale(1.1);
     }
-    .header {
-      font-size: calc($fz + 70%);
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+    &:active {
+      transform: scale(1);
     }
-    .footer {
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-      padding: 20px;
-      justify-content: right;
-      .button {
-        background-color: lighten($theme-color, 44%);
-        border-radius: 15px;
-        font-size: $fz;
-        font-weight: bold;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease-out;
-        &:hover {
-          background-color:darken($theme-color, 30%);
-          color: white;
-          transform: scale(1.1);
-        }
-        &:active {
-          font-size: calc($fz - 1px);
-        }
-      }
+  }
+}
+
+.grid {
+  font-size: $fz;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 10px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 15px;
+  &__email-container {
+    grid-row: 2 / 3; // Email field takes 1 row
+    grid-column: 1 / 3; // and 2 columns
+  }
+  &__bio-container {
+    grid-row: 7 / 9; // Bio textarea take 2 rows
+    grid-column: 1 / 3; // and 2 columns
+  }
+
+  &__item {
+    padding: 10px;
+  }
+
+  &__label {
+    color: $theme-color;
+  }
+
+  &__text-input,
+  &__textArea {
+    border: 1px solid rgb(129, 127, 127);
+    border-radius: 6px;
+    padding: 7px;
+    width: 100%;
+    box-shadow: 0 0 5px #cccccc;
+    transition: box-shadow 0.3s ease;
+    &::placeholder {
+      color: #999;
+      font-style: italic;
+      font-size: calc($fz - 20%);
     }
-    .grid-container {
-      font-size: $fz;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(8, 1fr); 
-      grid-gap: 10px;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
-      padding: 15px;
-      .grid-item {
-        padding: 10px;
-        label{  // All labels !
-          color: $theme-color;
-          user-select: none;  // user cannot select text
-        }
-      }
-      .text-field {
-        input, textarea {
-          border: 1px solid rgb(129, 127, 127);
-          border-radius: 6px;
-          padding: 7px;
-          width: 100%;
-          box-shadow: 0 0 5px #cccccc;
-          transition: box-shadow 0.3s ease;
-          &::placeholder {
-            color: #999;
-            font-style: italic;
-            font-size: calc($fz - 20%);
-          }
-          &:focus {
-            outline: none;
-            box-shadow: 0 0 5px $theme-color;
-            border: 0;
-          }
-        }
-      }
-      .email-container {  
-        grid-row: 2 / 3;    // Email field takes 1 row
-        grid-column: 1 / 3; // and 2 columns
-      }
-      .bio-container {  
-        grid-row: 7 / 9;    // Bio textarea take 2 rows
-        grid-column: 1 / 3; // and 2 columns
-        textarea {
-          padding: 10px;
-          height: 85%;
-          width: 100%;
-          resize: none;
-        }
-      }
-      .checkbox-container {  // Checkbox !
-        .checkbox-input {  // for input
-          position: absolute;
-          z-index: -1;
-          opacity: 0;
-        }
-        .checkbox-input+label {  // for labels connected to .checkbox-input
-          display: inline-flex;
-          align-items: center;
-          user-select: none;
-          color: black;   // fix for colored checkboxes
-        }
-        .checkbox-input+label::before {  // for labels - before
-          content: '';
-          display: inline-block;
-          width: 1em;
-          height: 1em;
-          flex-shrink: 0;
-          flex-grow: 0;
-          border: 1px solid #adb5bd;
-          border-radius: 0.25em;
-          margin-left: 0.5em;
-          margin-right: 0.1em;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: 50% 50%;
-        }
-        .checkbox-input:not(:disabled):not(:checked)+label:hover::before {  // hover on checkbox
-          border-color:$theme-color;
-        }
-        .checkbox-input:not(:disabled):active+label::before {  // active checkbox
-          background-color:lighten($theme-color, 44%);
-          border-color:lighten($theme-color, 44%);
-        }
-        .checkbox-input:focus+label::before {  //  checkbox in focus
-          box-shadow: 0 0 0 0.2rem lighten($theme-color, 44%);
-        }
-        .checkbox-input:focus:not(:checked)+label::before {  //  checkbox in focus (not checked)
-          border-color:$theme-color;
-        }
-        .checkbox-input:checked+label::before {  //  checkbox in focus (checked)
-          border-color: $theme-color;
-          background-color:$theme-color;
-          background-image: $check-box-icon;
-        }
-        .checkbox-input:disabled+label::before {  // checkbox (disabled)
-          background-color:$theme-color;
-        }
-      }
-      .slider-container {  // Slider !
-        .slider {
-          width: 75%;
-        }
-        .slider-value-layout {
-          width: 60px;
-          height: 30px;
-          background-color: lighten($theme-color, 20%);
-          border-radius: 10px;
-          display: inline-flex; 
-          justify-content: center;
-          align-items: center;
-          user-select: none;  // user cannot select text
-          span {
-            text-align: center;
-          }
-        }
-      }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px $theme-color;
+      border: 0;
     }
+  }
+
+  &__textArea {
+    min-height: 130px;
+    resize: none;
+  }
+
+  // Checkbox !
+  &__checkbox-input {
+    // for input
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &__checkbox-input + label {
+    // for labels connected to &__checkbox-input
+    display: inline-flex;
+    align-items: center;
+    color: black; // fix for colored checkboxes
+  }
+  &__checkbox-input + label::before {
+    // for labels - before
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-left: 0.5em;
+    margin-right: 0.1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  &__checkbox-input:not(:disabled):not(:checked) + label:hover::before {
+    // hover on checkbox
+    border-color: $theme-color;
+  }
+  &__checkbox-input:not(:disabled):active + label::before {
+    // active checkbox
+    background-color: lighten($theme-color, 44%);
+    border-color: lighten($theme-color, 44%);
+  }
+  &__checkbox-input:focus + label::before {
+    //  checkbox in focus
+    box-shadow: 0 0 0 0.2rem lighten($theme-color, 44%);
+  }
+  &__checkbox-input:focus:not(:checked) + label::before {
+    //  checkbox in focus (not checked)
+    border-color: $theme-color;
+  }
+  &__checkbox-input:checked + label::before {
+    //  checkbox in focus (checked)
+    border-color: $theme-color;
+    background-color: $theme-color;
+    background-image: $check-box-icon;
+  }
+  &__checkbox-input:disabled + label::before {
+    // checkbox (disabled)
+    background-color: $theme-color;
+  }
+
+  // Slider !
+  &__slider {
+    width: 280px;
+  }
+  &__value {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background-color: lighten($theme-color, 20%);
+    border-radius: 10px;
   }
 }
