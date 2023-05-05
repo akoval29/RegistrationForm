@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body class="main">
-    <section class="wrap">
+    <section class="main__wrap">
       <header class="header">
         <h4>Create Account</h4>
       </header>
@@ -33,7 +33,7 @@
             type="text"
             id="last-name"
             name="last-name"
-            placeholder="Enter your last name"
+            placeholder="enter your last name"
           />
         </div>
         <div class="grid__item grid__text-field grid__email-container">
@@ -130,21 +130,21 @@
           />
           <label class="grid__label" for="interest4">Movies</label>
         </div>
-        <div class="grid__item grid__text-field spoiler">
+        <div class="grid__item grid__text-field grid__spoiler">
           <!-- Spoiler -->
           <label class="grid__label" for="SourceOfIncome"
             >Source of income</label
           ><br />
-          <div class="input-container">
+          <div class="grid__input-container">
             <input
               class="grid__text-input"
               type="text"
               id="SourceOfIncome"
               value="Employed"
             />
-            <div class="arrow-container">
-              <span class="arrow up"></span>
-              <span class="arrow down"></span>
+            <div class="grid__arrow-container">
+              <span class="grid__arrow grid__arrow--up"></span>
+              <span class="grid__arrow grid__arrow--down"></span>
             </div>
           </div>
         </div>
@@ -193,9 +193,10 @@
         </div>
       </form>
       <footer class="footer">
+        <div class="footer__error"></div>
         <button class="footer__button">Create</button>
       </footer>
     </section>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
   </body>
 </html>

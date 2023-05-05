@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("normalize.css");
-@import url("spoiler/spoiler.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 $check-box-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 $fz: 18px;
-$theme-color: rgb(68, 66, 214); // <=  Theme change feature !
+$theme-color: rgb(93, 66, 214); // <=  Theme change feature !
 
 .main {
   display: flex;
@@ -18,17 +17,16 @@ $theme-color: rgb(68, 66, 214); // <=  Theme change feature !
   align-items: center;
   justify-content: center;
   user-select: none; // user cannot select text
-}
-
-.wrap {
-  position: relative;
-  display: grid;
-  grid-template-rows: 100px 1fr 80px;
-  background-color: lighten($theme-color, 44%);
-  border-radius: 15px;
-  max-width: 800px;
-  margin: 30px;
-  box-shadow: 0 0 15px $theme-color;
+  &__wrap {
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr 80px;
+    background-color: lighten($theme-color, 44%);
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 30px;
+    box-shadow: 0 0 15px $theme-color;
+  }
 }
 
 .header,
@@ -60,7 +58,7 @@ $theme-color: rgb(68, 66, 214); // <=  Theme change feature !
     cursor: pointer;
     transition: all 0.3s ease-out;
     &:hover {
-      background-color: darken($theme-color, 30%);
+      background-color: darken($theme-color, 15%);
       color: white;
       transform: scale(1.1);
     }
@@ -94,6 +92,7 @@ $theme-color: rgb(68, 66, 214); // <=  Theme change feature !
 
   &__label {
     color: $theme-color;
+    margin-right: 10px;
   }
 
   &__text-input,
@@ -144,7 +143,7 @@ $theme-color: rgb(68, 66, 214); // <=  Theme change feature !
     flex-grow: 0;
     border: 1px solid #adb5bd;
     border-radius: 0.25em;
-    margin-left: 0.5em;
+    // margin-left: 0.5em;
     margin-right: 0.1em;
     background-repeat: no-repeat;
     background-position: center center;
@@ -176,6 +175,36 @@ $theme-color: rgb(68, 66, 214); // <=  Theme change feature !
   &__checkbox-input:disabled + label::before {
     // checkbox (disabled)
     background-color: $theme-color;
+  }
+
+  // Spoiler
+  &__input-container {
+    position: relative;
+  }
+  &__arrow-container {
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+  }
+  &__arrow {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+    cursor: pointer;
+    &:hover {
+      border-color: red;
+      scale: 1.4;
+    }
+    &--up {
+      transform: rotate(-135deg);
+    }
+    &--down {
+      transform: rotate(45deg);
+    }
   }
 
   // Slider !
