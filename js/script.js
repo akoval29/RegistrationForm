@@ -41,21 +41,27 @@ const words = [
   "Developer",
   "QA Engineer",
   "UI/UX Designer",
-  "Project Manager",
   "Business Analyst",
+  "Project Manager",
   "Team Leader",
 ];
 let currentWord = 0;
-function increaseValue() {
-  currentWord = currentWord === 0 ? words.length - 1 : currentWord - 1;
+upArrow.addEventListener("click", () => {
+  if (currentWord === words.length - 1) {
+    currentWord = 0;
+  } else {
+    currentWord += 1;
+  }
   input.value = words[currentWord];
-}
-function decreaseValue() {
-  currentWord = currentWord === words.length - 1 ? 0 : currentWord + 1;
+});
+downArrow.addEventListener("click", () => {
+  if (currentWord === 0) {
+    currentWord = words.length - 1;
+  } else {
+    currentWord -= 1;
+  }
   input.value = words[currentWord];
-}
-upArrow.addEventListener("click", increaseValue);
-downArrow.addEventListener("click", decreaseValue);
+});
 
 // Slider code
 var slider = document.getElementById("myRange");
