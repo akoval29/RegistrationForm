@@ -1,0 +1,202 @@
+@import url("normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.main {
+  display: flex;
+  background: linear-gradient(to bottom left, #a596e8, white) no-repeat;
+  font-family: "Poppins", sans-serif;
+  margin: 30px;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main__wrap {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px 1fr 80px;
+  background-color: #fbfafe;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 30px;
+  box-shadow: 0 0 15px rgb(93, 66, 214);
+}
+
+.header,
+.footer {
+  display: flex;
+  font-weight: bold;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(93, 66, 214);
+}
+
+.header {
+  font-size: calc(18px + 70%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+}
+
+.footer {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+  justify-content: right;
+}
+.footer__button {
+  background-color: #fbfafe;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.footer__button:hover {
+  background-color: #3c24a7;
+  color: white;
+  transform: scale(1.1);
+}
+.footer__button:active {
+  transform: scale(1);
+}
+
+.grid {
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 10px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 15px;
+}
+.grid__email-container {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+.grid__bio-container {
+  grid-row: 7/9;
+  grid-column: 1/3;
+}
+.grid__item {
+  padding: 10px;
+}
+.grid__label {
+  color: rgb(93, 66, 214);
+  margin-right: 10px;
+}
+.grid__text-input, .grid__textArea {
+  border: 1px solid rgb(129, 127, 127);
+  border-radius: 6px;
+  padding: 7px;
+  width: 100%;
+  box-shadow: 0 0 5px #cccccc;
+  transition: box-shadow 0.3s ease;
+}
+.grid__text-input::-moz-placeholder, .grid__textArea::-moz-placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: calc(18px - 20%);
+}
+.grid__text-input::placeholder, .grid__textArea::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: calc(18px - 20%);
+}
+.grid__text-input:focus, .grid__textArea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgb(93, 66, 214);
+  border: 0;
+}
+.grid__textArea {
+  min-height: 130px;
+  resize: none;
+}
+.grid__checkbox-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.grid__checkbox-input + label {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+}
+.grid__checkbox-input + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.grid__checkbox-input:not(:disabled):not(:checked) + label:hover::before {
+  border-color: rgb(93, 66, 214);
+}
+.grid__checkbox-input:not(:disabled):active + label::before {
+  background-color: #fbfafe;
+  border-color: #fbfafe;
+}
+.grid__checkbox-input:focus + label::before {
+  box-shadow: 0 0 0 0.2rem #fbfafe;
+}
+.grid__checkbox-input:focus:not(:checked) + label::before {
+  border-color: rgb(93, 66, 214);
+}
+.grid__checkbox-input:checked + label::before {
+  border-color: rgb(93, 66, 214);
+  background-color: rgb(93, 66, 214);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.grid__checkbox-input:disabled + label::before {
+  background-color: rgb(93, 66, 214);
+}
+.grid__input-container {
+  position: relative;
+}
+.grid__arrow-container {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+}
+.grid__arrow {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  padding: 2px;
+  cursor: pointer;
+}
+.grid__arrow:hover {
+  border-color: red;
+  scale: 1.4;
+}
+.grid__arrow--up {
+  transform: rotate(-135deg);
+}
+.grid__arrow--down {
+  transform: rotate(45deg);
+}
+.grid__slider {
+  width: 280px;
+}
+.grid__value {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #a596e8;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */

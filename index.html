@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="test" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body class="main">
+    <section class="main__wrap">
+      <header class="header">
+        <h4>Create Account</h4>
+      </header>
+      <form class="grid">
+        <div class="grid__item grid__text-field">
+          <!-- First name -->
+          <label class="grid__label" for="first-name">First name*</label><br />
+          <input
+            class="grid__text-input"
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="enter your first name"
+            required
+          />
+        </div>
+        <div class="grid__item grid__text-field">
+          <!-- Last name -->
+          <label class="grid__label" for="last-name">Last name</label><br />
+          <input
+            class="grid__text-input"
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="enter your last name"
+          />
+        </div>
+        <div class="grid__item grid__text-field grid__email-container">
+          <!--Email -->
+          <label class="grid__label" for="email">Email*</label><br />
+          <input
+            class="grid__text-input"
+            type="text"
+            id="email"
+            name="email"
+            placeholder="example@gmail.com"
+            required
+          />
+        </div>
+        <div class="grid__item grid__text-field">
+          <!-- password -->
+          <label class="grid__label" for="password">Password*</label><br />
+          <input
+            class="grid__text-input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="enter your password"
+            required
+          />
+        </div>
+        <div class="grid__item grid__text-field">
+          <!-- confirm passwrd -->
+          <label class="grid__label" for="confirm-password"
+            >Confirm password*</label
+          ><br />
+          <input
+            class="grid__text-input"
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="enter your password again"
+            required
+          />
+        </div>
+        <div class="grid__item checkbox-container">
+          <!-- Checkbox Gender -->
+          <label class="grid__label" for="gender">Gender</label><br />
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="male"
+            name="gender"
+            value="male"
+          />
+          <label class="grid__label" for="male">Male</label>
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="female"
+            name="gender"
+            value="female"
+          />
+          <label class="grid__label" for="female">Female</label>
+        </div>
+        <div class="grid__item grid__checkbox-container">
+          <!-- Checkbox Interests -->
+          <label class="grid__label" for="interests">Interests</label><br />
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="interest1"
+            name="interests"
+            value="interest1"
+          />
+          <label class="grid__label" for="interest1">Music</label>
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="interest2"
+            name="interests"
+            value="interest2"
+          />
+          <label class="grid__label" for="interest2">Sport</label>
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="interest3"
+            name="interests"
+            value="interest3"
+          />
+          <label class="grid__label" for="interest3">Travel</label>
+          <input
+            class="grid__checkbox-input"
+            type="checkbox"
+            id="interest4"
+            name="interests"
+            value="interest4"
+          />
+          <label class="grid__label" for="interest4">Movies</label>
+        </div>
+        <div class="grid__item grid__text-field grid__spoiler">
+          <!-- Spoiler -->
+          <label class="grid__label" for="SourceOfIncome"
+            >Source of income</label
+          ><br />
+          <div class="grid__input-container">
+            <input
+              class="grid__text-input"
+              type="text"
+              id="SourceOfIncome"
+              value="Employed"
+            />
+            <div class="grid__arrow-container">
+              <span class="grid__arrow grid__arrow--up"></span>
+              <span class="grid__arrow grid__arrow--down"></span>
+            </div>
+          </div>
+        </div>
+        <div class="grid__item grid__slider-container">
+          <!-- Slider (income) -->
+          <label class="grid__label" for="myRange">Income</label><br />
+          <input
+            class="grid__slider"
+            id="myRange"
+            type="range"
+            min="10"
+            max="100"
+            value="20"
+            step="1"
+          />
+          <div class="grid__value">
+            <span id="demo"></span>
+            <p>K</p>
+          </div>
+        </div>
+        <fieldset class="grid__item">
+          <!-- UPload files -->
+          <label class="grid__label" for="file">Upload profile picture</label
+          ><br />
+          <input type="file" id="file" multiple="multiple" />
+        </fieldset>
+        <div class="grid__item grid__text-field">
+          <!-- Age -->
+          <label class="grid__label" for="age">Age</label><br />
+          <input
+            class="grid__text-input"
+            type="text"
+            id="age"
+            name="age"
+            placeholder="18"
+          />
+        </div>
+        <div class="grid__item grid__text-field grid__bio-container">
+          <!-- Bio -->
+          <label class="grid__label" for="Bio">Bio</label><br />
+          <textarea
+            class="grid__textArea"
+            id="Bio"
+            placeholder="About me"
+          ></textarea>
+        </div>
+      </form>
+      <footer class="footer">
+        <div class="footer__error"></div>
+        <button class="footer__button">Create</button>
+      </footer>
+    </section>
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
