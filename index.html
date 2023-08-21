@@ -13,8 +13,8 @@
         <h4>Create Account</h4>
       </header>
       <form class="grid">
+        <!-- First name -->
         <div class="grid__item grid__text-field">
-          <!-- First name -->
           <label class="grid__label" for="first-name">First name*</label><br />
           <input
             class="grid__text-input"
@@ -25,8 +25,9 @@
             required
           />
         </div>
+
+        <!-- Last name -->
         <div class="grid__item grid__text-field">
-          <!-- Last name -->
           <label class="grid__label" for="last-name">Last name</label><br />
           <input
             class="grid__text-input"
@@ -36,8 +37,9 @@
             placeholder="enter your last name"
           />
         </div>
+
+        <!--Email -->
         <div class="grid__item grid__text-field grid__email-container">
-          <!--Email -->
           <label class="grid__label" for="email">Email*</label><br />
           <input
             class="grid__text-input"
@@ -48,8 +50,9 @@
             required
           />
         </div>
+
+        <!-- password -->
         <div class="grid__item grid__text-field">
-          <!-- password -->
           <label class="grid__label" for="password">Password*</label><br />
           <input
             class="grid__text-input"
@@ -60,8 +63,8 @@
             required
           />
         </div>
+        <!-- confirm passwrd -->
         <div class="grid__item grid__text-field">
-          <!-- confirm passwrd -->
           <label class="grid__label" for="confirm-password"
             >Confirm password*</label
           ><br />
@@ -75,8 +78,8 @@
           />
         </div>
 
+        <!-- Checkbox "Gender" -->
         <div class="grid__item checkBox">
-          <!-- Checkbox Gender -->
           <label class="checkBox__label" for="gender">Gender</label><br />
           <input
             class="checkbox__input"
@@ -95,8 +98,9 @@
           />
           <label class="checkBox__label" for="female">Female</label>
         </div>
+
+        <!-- Checkbox "Interests" -->
         <div class="grid__item checkbox">
-          <!-- Checkbox Favorites -->
           <label class="checkBox__label" for="interests">Interests</label><br />
           <input
             class="checkbox__input"
@@ -133,20 +137,20 @@
         </div>
 
         <!-- Spoiler -->
-        <div class="grid__item grid__text-field grid__spoiler">
-          <label class="grid__label" for="SourceOfIncome"
+        <div class="grid__item grid__text-field spoiler">
+          <label class="spoiler__label" for="SourceOfIncome"
             >Source of income</label
           ><br />
-          <div class="grid__input-container">
+          <div class="spoiler__container">
             <input
-              class="grid__text-input"
+              class="spoiler__input"
               type="text"
               id="SourceOfIncome"
               value="Employed"
             />
-            <div class="grid__arrow-container">
-              <span class="grid__arrow grid__arrow--up"></span>
-              <span class="grid__arrow grid__arrow--down"></span>
+            <div class="spoiler__arrow-wrap">
+              <span class="spoiler__arrow spoiler__arrow--up"></span>
+              <span class="spoiler__arrow spoiler__arrow--down"></span>
             </div>
           </div>
         </div>
@@ -175,8 +179,9 @@
           ><br />
           <input type="file" id="file" multiple="multiple" />
         </fieldset>
+
+        <!-- Age -->
         <div class="grid__item grid__text-field">
-          <!-- Age -->
           <label class="grid__label" for="age">Age</label><br />
           <input
             class="grid__text-input"
@@ -186,8 +191,9 @@
             placeholder="18"
           />
         </div>
+
+        <!-- Bio -->
         <div class="grid__item grid__text-field grid__bio-container">
-          <!-- Bio -->
           <label class="grid__label" for="Bio">Bio</label><br />
           <textarea
             class="grid__textArea"

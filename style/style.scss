@@ -119,16 +119,35 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
     min-height: 130px;
     resize: none;
   }
+}
 
-  // Spoiler
-  &__input-container {
+.spoiler {
+  &__container {
     position: relative;
   }
-  &__arrow-container {
+  &__arrow-wrap {
     position: absolute;
     top: 50%;
     right: 3%;
     transform: translateY(-50%);
+  }
+  &__input {
+    border: 1px solid rgb(129, 127, 127);
+    border-radius: 6px;
+    padding: 7px;
+    width: 100%;
+    box-shadow: 0 0 5px #cccccc;
+    transition: box-shadow 0.3s ease;
+    &::placeholder {
+      color: #999;
+      font-style: italic;
+      font-size: calc($fz - 20%);
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px $theme-color;
+      border: 0;
+    }
   }
   &__arrow {
     display: block;
@@ -144,9 +163,11 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
     }
     &--up {
       transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
     }
     &--down {
       transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
     }
   }
 }
@@ -202,6 +223,7 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
     border-color: $theme-color;
     background-color: $theme-color;
     background-image: $check-box-icon;
+    scale: 1.1;
   }
   // checkbox (disabled)
   &__input:disabled + label::before {

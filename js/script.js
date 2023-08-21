@@ -35,8 +35,8 @@ submitBtn.addEventListener("click", () => {
 
 // Spoiler code
 const input = document.getElementById("SourceOfIncome");
-const upArrow = document.querySelector(".grid__arrow--up");
-const downArrow = document.querySelector(".grid__arrow--down");
+const upArrow = document.querySelector(".spoiler__arrow--up");
+const downArrow = document.querySelector(".spoiler__arrow--down");
 const words = [
   "Developer",
   "QA Engineer",
