@@ -221,3 +221,63 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
     border-radius: 10px;
   }
 }
+
+.slider {
+  &__input {
+    width: 280px;
+    -webkit-appearance: none;
+    height: 10px;
+    background: #d3d3d3;
+    color: white;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, background-color 0.2s;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
+    &:hover {
+      opacity: 1;
+    }
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: $theme-color;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: $theme-color;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.2s, transform 0.2s;
+    }
+    &::-webkit-slider-thumb:hover {
+      background-color: darken($theme-color, 15%);
+      transform: scale(1.2);
+    }
+    &::-moz-range-thumb:hover {
+      background-color: $theme-color;
+      transform: scale(1.2);
+    }
+  }
+  &__value {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background-color: lighten($theme-color, 20%);
+    border-radius: 10px;
+    user-select: none; // user cannot select text
+    span {
+      text-align: center;
+    }
+  }
+}
