@@ -74,64 +74,66 @@
             required
           />
         </div>
-        <div class="grid__item checkbox-container">
+
+        <div class="grid__item checkBox">
           <!-- Checkbox Gender -->
-          <label class="grid__label" for="gender">Gender</label><br />
+          <label class="checkBox__label" for="gender">Gender</label><br />
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="male"
             name="gender"
             value="male"
           />
-          <label class="grid__label" for="male">Male</label>
+          <label class="checkBox__label" for="male">Male</label>
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="female"
             name="gender"
             value="female"
           />
-          <label class="grid__label" for="female">Female</label>
+          <label class="checkBox__label" for="female">Female</label>
         </div>
-        <div class="grid__item grid__checkbox-container">
-          <!-- Checkbox Interests -->
-          <label class="grid__label" for="interests">Interests</label><br />
+        <div class="grid__item checkbox">
+          <!-- Checkbox Favorites -->
+          <label class="checkBox__label" for="interests">Interests</label><br />
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="interest1"
             name="interests"
             value="interest1"
           />
-          <label class="grid__label" for="interest1">Music</label>
+          <label class="checkBox__label" for="interest1">Music</label>
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="interest2"
             name="interests"
             value="interest2"
           />
-          <label class="grid__label" for="interest2">Sport</label>
+          <label class="checkBox__label" for="interest2">Sport</label>
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="interest3"
             name="interests"
             value="interest3"
           />
-          <label class="grid__label" for="interest3">Travel</label>
+          <label class="checkBox__label" for="interest3">Travel</label>
           <input
-            class="grid__checkbox-input"
+            class="checkbox__input"
             type="checkbox"
             id="interest4"
             name="interests"
             value="interest4"
           />
-          <label class="grid__label" for="interest4">Movies</label>
+          <label class="checkBox__label" for="interest4">Movies</label>
         </div>
+
+        <!-- Spoiler -->
         <div class="grid__item grid__text-field grid__spoiler">
-          <!-- Spoiler -->
           <label class="grid__label" for="SourceOfIncome"
             >Source of income</label
           ><br />
@@ -148,8 +150,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Slider -->
         <div class="grid__item slider">
-          <!-- Slider (income) -->
           <label class="slider__label" for="myRange">Income</label><br />
           <input
             class="slider__input"
@@ -165,8 +168,9 @@
             <p>K</p>
           </div>
         </div>
+
+        <!-- UPload files -->
         <fieldset class="grid__item">
-          <!-- UPload files -->
           <label class="grid__label" for="file">Upload profile picture</label
           ><br />
           <input type="file" id="file" multiple="multiple" />

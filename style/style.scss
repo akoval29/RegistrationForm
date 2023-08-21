@@ -120,63 +120,6 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
     resize: none;
   }
 
-  // Checkbox !
-  &__checkbox-input {
-    // for input
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
-  &__checkbox-input + label {
-    // for labels connected to &__checkbox-input
-    display: inline-flex;
-    align-items: center;
-    color: black; // fix for colored checkboxes
-  }
-  &__checkbox-input + label::before {
-    // for labels - before
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 0.25em;
-    // margin-left: 0.5em;
-    margin-right: 0.1em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-  }
-  &__checkbox-input:not(:disabled):not(:checked) + label:hover::before {
-    // hover on checkbox
-    border-color: $theme-color;
-  }
-  &__checkbox-input:not(:disabled):active + label::before {
-    // active checkbox
-    background-color: lighten($theme-color, 44%);
-    border-color: lighten($theme-color, 44%);
-  }
-  &__checkbox-input:focus + label::before {
-    //  checkbox in focus
-    box-shadow: 0 0 0 0.2rem lighten($theme-color, 44%);
-  }
-  &__checkbox-input:focus:not(:checked) + label::before {
-    //  checkbox in focus (not checked)
-    border-color: $theme-color;
-  }
-  &__checkbox-input:checked + label::before {
-    //  checkbox in focus (checked)
-    border-color: $theme-color;
-    background-color: $theme-color;
-    background-image: $check-box-icon;
-  }
-  &__checkbox-input:disabled + label::before {
-    // checkbox (disabled)
-    background-color: $theme-color;
-  }
-
   // Spoiler
   &__input-container {
     position: relative;
@@ -206,19 +149,63 @@ $theme-color: rgb(93, 66, 214); // <=  Theme change feature !
       transform: rotate(45deg);
     }
   }
+}
 
-  // Slider !
-  &__slider {
-    width: 280px;
+.checkbox {
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
   }
-  &__value {
+  // for labels connected to &__input
+  &__input + label {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 30px;
-    background-color: lighten($theme-color, 20%);
-    border-radius: 10px;
+    user-select: none;
+    color: black; // fix for colored checkboxes
+  }
+  // for labels - before
+  &__input + label::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-left: 0.5em;
+    margin-right: 0.1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  // hover on checkbox
+  &__input:not(:disabled):not(:checked) + label:hover::before {
+    border-color: $theme-color;
+  }
+  // active checkbox
+  &__input:not(:disabled):active + label::before {
+    background-color: lighten($theme-color, 44%);
+    border-color: lighten($theme-color, 44%);
+  }
+  //  checkbox in focus
+  &__input:focus + label::before {
+    box-shadow: 0 0 0 0.2rem lighten($theme-color, 44%);
+  }
+  //  checkbox in focus (not checked)
+  &__input:focus:not(:checked) + label::before {
+    border-color: $theme-color;
+  }
+  //  checkbox in focus (checked)
+  &__input:checked + label::before {
+    border-color: $theme-color;
+    background-color: $theme-color;
+    background-image: $check-box-icon;
+  }
+  // checkbox (disabled)
+  &__input:disabled + label::before {
+    background-color: $theme-color;
   }
 }
 
